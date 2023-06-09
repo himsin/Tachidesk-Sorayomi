@@ -171,16 +171,6 @@ jobs:
           draft: false
           files: ${{ env.pkg_name }}*
           token: ${{ secrets.WINGET }}
-      
-      - uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          draft: true
-          title: "Release ${{ env.date_now }}"
-          files: |
-            $GITHUB_WORKSPACE/${{ env.pkg_name }}-${{ github.ref_name }}-${{ matrix.target }}.zip
-            ${env:GITHUB_WORKSPACE}\${{ env.pkg_name }}-${{ github.ref_name }}-${{ matrix.target }}-x64.zip
 
 #  winget-publish:
 #    needs: create-build
