@@ -166,7 +166,7 @@ jobs:
 
       - name: Add packaged build to release draft
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+#        if: startsWith(github.ref, 'refs/tags/')
         with:
           draft: false
           files: ${{ env.pkg_name }}*
